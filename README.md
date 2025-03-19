@@ -1,6 +1,7 @@
 
 ### Summary: Include screen shots or a video of your app highlighting its features
 
+
 ### Focus Areas: What specific areas of the project did you prioritize? Why did you choose to focus on these areas?
 
 I primarily focused on building an architecture and unit testing portion of the project. 
@@ -28,7 +29,8 @@ Another thing I didn’t have time to optimize was the batch image fetching. Cur
             Task {
                 await listItem.fetchAdditionalData()
             }
-        } ```
+        }
+```
 
 The app is running the batch fetchImage functions serially in time. I want to further optimize this by running them in parallel by utilizing Swift Concurrency, maybe TaskGroup or Async Sequence. 
 
