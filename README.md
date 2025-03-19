@@ -43,9 +43,9 @@ Around 5-6 hours over 3 days.
 
 ### Trade-offs and Decisions: Did you make any significant trade-offs in your approach?
 
-The major downfall of this project is the UI. It is barebones as I wanted to focus on the engine of the application. There are some loading indicators missing in some places. 
+* The major downfall of this project is the UI. It is barebones as I wanted to focus on the engine of the application. There are some loading indicators missing in some places. 
 
-Another thing I didn’t have time to optimize was the batch image fetching. Currently the code looks like this:
+* Another thing I didn’t have time to optimize was the batch image fetching. Currently the code looks like this:
 
 ```
        for listItem in newListItems {
@@ -57,6 +57,7 @@ Another thing I didn’t have time to optimize was the batch image fetching. Cur
 ```
 
 The app is running the batch fetchImage functions serially in time. I want to further optimize this by running them in parallel by utilizing Swift Concurrency, maybe TaskGroup or Async Sequence. 
+
 
 
 ### Weakest Part of the Project: What do you think is the weakest part of your project?
