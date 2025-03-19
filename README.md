@@ -3,25 +3,35 @@
 
 The app will first download all the recipe response but will only fetch 3 images at a time
 On scroll when the last item on the List appears, it will batch the next set of images
+
 https://github.com/user-attachments/assets/b655b809-5042-47e2-8d85-2620d049104a
 
 
 The app will also show an empty state when the JSON is empty, prompting the user to retry again
+
 https://github.com/user-attachments/assets/3773ec20-32e9-4f48-8b61-164d92266099
 
 
 The app will also show an error state when the JSON is malformed, prompting the user to retry again
+
 https://github.com/user-attachments/assets/d7010ab0-276c-4742-8fee-e8a61d315c72
 
 
 ### Focus Areas: What specific areas of the project did you prioritize? Why did you choose to focus on these areas?
 
+I primarily focused on the architecture of the project. I wanted the project to accomplish three things: 
+            1) Meet the Project requirements
+            2) Scalability 
+            3) Unit testable
 
-I primarily focused on building an architecture and unit testing portion of the project. 
+For the project requirements, I need to come up with some sort of client side pagination. I divided the logical parts of the codebase into components to support the pagination. 
+            1) `RecipeListViewModel` is the engine for the feature. This would control when the data fetching happens and delegate the child view models                 when to fetch its own data. The main coordinater 
+            2) `RecipeListModel` is the component which implements the function `fetchNextItems`. This function gets the next batch of items for the                     pagination
+            3) `RecipeListItemViewModel` is the view model for each cell. It's main job is to fetch the Image file for the cell
 
-For the architecture portion, I wanted to have a codebase that can easily scale, if the pagination was ever done on the server side. I try to keep the logic of pagination contained so I can easily swap out the implementation if I have to. This can be seen in the RecipeService. 
+For Scalability, I wanted to create a codebase that can easily swap out the implementation of the client side pagination for a server-side pagination implementation if it ever happens. This can be done by making a new class that conforms to the `IRecipeService`.
 
-Also, I tried to break the project into logical modules such as the Networking Layer, UI Layer, and View Model Layers. This meant easy unit testing as I can test separate components individually.
+For Unit testability, I made sure to create interfaces for some of my actors/classes for my app. This will allow me to unit test these components in isolation and also utilize spies for better testing. 
 
 ### Time Spent: Approximately how long did you spend working on this project? How did you allocate your time?
 
