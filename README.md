@@ -19,15 +19,15 @@ https://github.com/user-attachments/assets/d7010ab0-276c-4742-8fee-e8a61d315c72
 
 ### Focus Areas: What specific areas of the project did you prioritize? Why did you choose to focus on these areas?
 
-I primarily focused on the architecture of the project. I wanted the project to accomplish three things: 
-            1) Meet the Project requirements
-            2) Scalability 
-            3) Unit testable
+I primarily focused on the architecture of the project. I wanted the project to accomplish three things:  
+            * Meet the Project requirements  
+            * Scalability  
+            * Unit testable  
 
-For the project requirements, I need to come up with some sort of client side pagination. I divided the logical parts of the codebase into components to support the pagination. 
-            1) `RecipeListViewModel` is the engine for the feature. This would control when the data fetching happens and delegate the child view models                 when to fetch its own data. The main coordinater 
-            2) `RecipeListModel` is the component which implements the function `fetchNextItems`. This function gets the next batch of items for the                     pagination
-            3) `RecipeListItemViewModel` is the view model for each cell. It's main job is to fetch the Image file for the cell
+For the project requirements, I need to come up with some sort of client side pagination. I divided the logical parts of the codebase into components to support the pagination.  
+            * `RecipeListViewModel` is the engine for the feature. This would control when the data fetching happens and delegate the child view models                 when to fetch its own data. The main coordinater  
+            * `RecipeListModel` is the component which implements the function `fetchNextItems`. This function gets the next batch of items for the                     pagination  
+            * `RecipeListItemViewModel` is the view model for each cell. It's main job is to fetch the Image file for the cell  
 
 For Scalability, I wanted to create a codebase that can easily swap out the implementation of the client side pagination for a server-side pagination implementation if it ever happens. This can be done by making a new class that conforms to the `IRecipeService`.
 
