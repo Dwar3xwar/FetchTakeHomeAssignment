@@ -1,8 +1,21 @@
 
 ### Summary: Include screen shots or a video of your app highlighting its features
 
+// The app will first download all the recipe response but will only fetch 3 images at a time
+// On scroll when the last item on the List appears, it will batch the next set of images
+https://github.com/user-attachments/assets/b655b809-5042-47e2-8d85-2620d049104a
+
+
+// The app will also show an empty state when the JSON is empty, prompting the user to retry again
+https://github.com/user-attachments/assets/3773ec20-32e9-4f48-8b61-164d92266099
+
+
+// The app will also show an error state when the JSON is malformed, prompting the user to retry again
+https://github.com/user-attachments/assets/d7010ab0-276c-4742-8fee-e8a61d315c72
+
 
 ### Focus Areas: What specific areas of the project did you prioritize? Why did you choose to focus on these areas?
+
 
 I primarily focused on building an architecture and unit testing portion of the project. 
 
