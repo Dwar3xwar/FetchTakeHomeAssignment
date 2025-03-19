@@ -47,7 +47,8 @@ The major downfall of this project is the UI. It is barebones as I wanted to foc
 
 Another thing I didn’t have time to optimize was the batch image fetching. Currently the code looks like this:
 
-```         for listItem in newListItems {
+```
+       for listItem in newListItems {
             list.append(listItem)
             Task {
                 await listItem.fetchAdditionalData()
